@@ -1,12 +1,12 @@
 
-anglular.module("javi",["ngRoute","route-segment","view-segment"]);
+angular.module("javi",["ngRoute","route-segment","view-segment"]);
 
 //definimos los enrutamientos
-anglular.module("javi").config(["$routeSegmentProvider","$routeProvider", function($routeSegmentProvider, $routeProvider){
+angular.module("javi").config(["$routeSegmentProvider","$routeProvider", function($routeSegmentProvider, $routeProvider){
 
-    $routeSegmentProvider.when("/album","albumes");
-    $routeSegmentProvider.when("/banda","bandas");
-    $routeSegmentProvider.when("/genero","generos");
+    $routeSegmentProvider.when("/album","album");
+    $routeSegmentProvider.when("/banda","banda");
+    $routeSegmentProvider.when("/genero","genero");
     $routeProvider.otherwise({
         redirectTo:"/"
     });
@@ -17,7 +17,7 @@ anglular.module("javi").config(["$routeSegmentProvider","$routeProvider", functi
         templateUrl: "views/album.html"
     });
     $routeSegmentProvider.segment("banda",{
-        controller: "ABandaCtrl",
+        controller: "BandaCtrl",
         templateUrl: "views/banda.html"
     });
     $routeSegmentProvider.segment("genero",{
