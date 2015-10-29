@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html ng-app="javi">
+<head lang=es">
     <meta charset="UTF-8">
     <title>Javiteca</title>
 </head>
 <body>
+<div class="container">
 
+    <header>Javiteca</header>
+    <nav ng-controller="IndexCtrl">
+        <ul>
+            <li><a href="#/album">Albumes</a></li>
+            <li><a href="#/banda">Bandas</a></li>
+            <li><a href="#/genero">Generos</a></li>
+        </ul>
+    </nav>
+
+    <section app-view-segment="0">
+
+    </section>
+</div>
 </body>
 </html>
