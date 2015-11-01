@@ -1,4 +1,4 @@
-angular.module("jevi").service("BandsProvider",
+angular.module("javi").service("BandsProvider",
     function($http)
     {
         this.getBands

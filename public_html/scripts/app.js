@@ -1,4 +1,3 @@
-
 angular.module("javi",["ngRoute","route-segment","view-segment"]);
 
 //definimos los enrutamientos
@@ -14,7 +13,12 @@ angular.module("javi").config(["$routeSegmentProvider","$routeProvider", functio
     //segmentos
     $routeSegmentProvider.segment("album",{
         controller: "AlbumCtrl",
-        templateUrl: "views/album.html"
+        templateUrl: "views/album.html",
+        resolve: {
+            Albums: [ "AlbumsProvider", function(AlbumsProvider){
+                return AlbumsProvider.getAlbums();
+            }]
+        }
     });
     $routeSegmentProvider.segment("banda",{
         controller: "BandaCtrl",

@@ -1,11 +1,8 @@
-angular.module("jevi").service("BandsProvider",
+angular.module("javi").service("AlbumsProvider",["$http",
     function($http)
     {
-        this.getBands
-            =
-            function()
-            {
-                return
-                $http.get("data/albums.json");
-            };
-    });
+        this.getAlbums = function()
+                     {
+                       return  $http.get("data/albums.json");
+                     };
+    }]);

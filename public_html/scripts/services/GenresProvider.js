@@ -1,7 +1,7 @@
-angular.module("jeviteca").service("BandsProvider",
+angular.module("javi").service("GenresProvider",
     function($http)
     {
-        this.getBands
+        this.getGenres
             =
             function()
             {
