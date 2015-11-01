@@ -8,7 +8,7 @@ angular.module("javi").config(["$routeSegmentProvider","$routeProvider", functio
     $routeSegmentProvider.when("/banda","banda");
     $routeSegmentProvider.when("/genero","genero");
     $routeProvider.otherwise({
-        redirectTo:"/"
+        redirectTo:"/album"
     });
 
     //segmentos
