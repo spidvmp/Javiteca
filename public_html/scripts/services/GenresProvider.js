@@ -1,11 +1,8 @@
-angular.module("javi").service("GenresProvider",
+angular.module("javi").service("GenresProvider",["$http",
     function($http)
     {
-        this.getGenres
-            =
-            function()
+        this.getGenres = function()
             {
-                return
-                $http.get("data/genres.json");
+                return $http.get("data/genres.json");
             };
-    });
+    }]);

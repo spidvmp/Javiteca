@@ -1,6 +1,5 @@
-angular.module("javi").controller("BandaCtrl",["$routeSegment","$scope",function($routeSegment,$scope){
+angular.module("javi").controller("BandaCtrl",["$routeSegment","$scope","Bands", function($routeSegment,$scope,Bands){
 
-
-
+    $scope.Bandas = Bands.data;
 
 }]);

@@ -1,6 +1,6 @@
-angular.module("javi").controller("GeneroCtrl",["$routeSegment","$scope",function($routeSegment,$scope){
+angular.module("javi").controller("GeneroCtrl",["$routeSegment","$scope","Genres",function($routeSegment,$scope,Genres){
 
-
+    $scope.Generos=Genres.data;
 
 
 }]);

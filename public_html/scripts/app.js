@@ -22,10 +22,20 @@ angular.module("javi").config(["$routeSegmentProvider","$routeProvider", functio
     });
     $routeSegmentProvider.segment("banda",{
         controller: "BandaCtrl",
-        templateUrl: "views/banda.html"
+        templateUrl: "views/banda.html",
+        resolve: {
+            Bands: [ "BandsProvider", function(BandsProvider){
+                return BandsProvider.getBands();
+            }]
+        }
     });
     $routeSegmentProvider.segment("genero",{
         controller: "GeneroCtrl",
-        templateUrl: "views/genero.html"
+        templateUrl: "views/genero.html",
+        resolve: {
+            Genres: [ "GenresProvider", function(GenresProvider){
+                return GenresProvider.getGenres();
+            }]
+        }
     });
 }]);
