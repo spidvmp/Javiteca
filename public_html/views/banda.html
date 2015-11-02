@@ -1,8 +1,15 @@
 
-<header>Bandas de musica</header>
-<table class="table table-stripped">
+<table class="table table-stripped table-hover">
+    <tr><td>Banda</td><td>Albumes</td><td></td><td>Componentes</td></tr>
     <tr ng-repeat="ba in Bandas">
-        <td>{{ba.name}}</td>
+        <td>
+            <div>
+                <p>{{ba.name}}</p>
+                <p><small><em>{{ba.origin}}</em></small></p>
+            </div>
+        </td>
+        <td>{{ba.albums.length}}</td>
+        <td>{{ba.members.length}}</td>
 
 
     </tr>
