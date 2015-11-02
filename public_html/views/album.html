@@ -2,6 +2,7 @@
 <header>Albumes</header>
 <table class="table table-stripped">
     <tr ng-repeat="al in Albumes">
+        <td><img src="img/{{al.image}}" width="70px" height="70px"/></td>
         <td>{{al.title}}</td>
         <td>{{al.band.name}}</td>
         <td>{{al.genre.name}}</td>
