@@ -26,9 +26,9 @@
     <header><h1 class="text-center">Javiteca</h1></header>
     <nav ng-controller="IndexCtrl">
         <ul class="nav nav-tabs">
-            <li role="presentation" class="active"><a href="#/album">Albumes</a></li>
-            <li role="presentation"><a href="#/banda">Bandas</a></li>
-            <li role="presentation"><a href="#/genero">Generos</a></li>
+            <li role="presentation" ng-class="{'active':rutaAlbum()}"><a href="#/album">Albumes</a></li>
+            <li role="presentation" ng-class="{'active':rutaBanda()}"><a href="#/banda">Bandas</a></li>
+            <li role="presentation" ng-class="{'active':rutaAGenero()}"><a href="#/genero">Generos</a></li>
         </ul>
     </nav>
 

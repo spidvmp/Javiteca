@@ -2,8 +2,9 @@
 
 <table class="table table-stripped table-hover">
     <tr><td>Portada</td><td>Titulo</td><td>Banda</td><td>Tracks</td></tr>
-    <tr ng-repeat="al in Albumes">
-        <td><img src="img/{{al.image}}" width="70px" height="70px"/></td>
+    <tr ng-repeat="al in Albumes" >
+        <!-- el ng-if es pàra comtrolar que si no hay imagen pues que no salga el enlace roto -->
+        <td><img src="img/{{al.image}}" width="70px" ng-if="al.image" class="img-rounded"/></td>
         <td>
             <div>
             <p>{{al.title}} ({{al.year}})</p>
