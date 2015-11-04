@@ -1,4 +1,5 @@
-angular.module("javi",["ngRoute","route-segment","view-segment"]);
+
+angular.module("javi",["ngRoute"]);
 
 //definomos provider
 
@@ -39,8 +40,10 @@ angular.module("javi").config(["$routeProvider", function( $routeProvider){
             }]
         }
     });
+    /*
     //ruta por defecto
     $routeProvider.otherwise({
         redirectTo: "/album"
     });
+    */
 }]);
