@@ -1,41 +1,46 @@
 angular.module("javi",["ngRoute","route-segment","view-segment"]);
 
+//definomos provider
+
+angular.module("javi").config(["JavitecaProvider", "Properties", function(JavitecaProvider, Properties){
+    JavitecaProvider.setAlbum(Properties.albumes);
+    JavitecaProvider.setGenero(Properties.generos);
+    JavitecaProvider.setBanda(Properties.bandas);
+    debugger;
+}]);
+
 //definimos los enrutamientos
-angular.module("javi").config(["$routeSegmentProvider","$routeProvider", function($routeSegmentProvider, $routeProvider){
+angular.module("javi").config(["$routeProvider", function( $routeProvider){
 
-    $routeSegmentProvider.when("/album","album");
-    $routeSegmentProvider.when("/banda","banda");
-    $routeSegmentProvider.when("/genero","genero");
-    $routeProvider.otherwise({
-        redirectTo:"/album"
-    });
-
-    //segmentos
-    $routeSegmentProvider.segment("album",{
+    $routeProvider.when("/album",{
         controller: "AlbumCtrl",
         templateUrl: "views/album.html",
         resolve: {
-            Albums: [ "AlbumsProvider", function(AlbumsProvider){
-                return AlbumsProvider.getAlbums();
+            Albums: [ "Javiteca", function(Javiteca){
+                return Javiteca.getAlbumes();
             }]
         }
     });
-    $routeSegmentProvider.segment("banda",{
+    $routetProvider.when("/banda",{
         controller: "BandaCtrl",
         templateUrl: "views/banda.html",
         resolve: {
-            Bands: [ "BandsProvider", function(BandsProvider){
-                return BandsProvider.getBands();
+            Bands: [ "Javiteca", function(Javiteca){
+                return Javiteca.getBands();
             }]
         }
     });
-    $routeSegmentProvider.segment("genero",{
+    $routeProvider.when("/genero",{
         controller: "GeneroCtrl",
         templateUrl: "views/genero.html",
         resolve: {
-            Genres: [ "GenresProvider", function(GenresProvider){
-                return GenresProvider.getGenres();
+            Genres: [ "Javiteca", function(Javiteca){
+                return Javiteca.getGenres();
             }]
         }
+    });
+    //ruta por defecto
+    $routeProvider.otherwise({
+        redirectTo: "/album"
     });
 }]);

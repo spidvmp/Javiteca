@@ -1,4 +1,4 @@
-angular.module("javi").controller("AlbumCtrl",["$routeSegment","$scope","Albums",function($routeSegment,$scope,Albums){
+angular.module("javi").controller("AlbumCtrl",["$scope","Albums",function($scope,Albums){
 
         $scope.Albumes=Albums.data;
 

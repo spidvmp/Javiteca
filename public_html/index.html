@@ -1,26 +1,12 @@
 <!DOCTYPE html>
-<html ng-app="javi">
-<head lang=es">
+<html>
+<head lang="es">
     <meta charset="UTF-8">
     <title>Javiteca</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-
-
-    <script src="vendor/angular.min.js"></script>
-    <script src="vendor/angular-route.min.js"></script>
-    <script src="vendor/angular-route-segment.js"></script>
-
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/IndexCtrl.js"></script>
-    <script src="scripts/controllers/AlbumCtrl.js"></script>
-    <script src="scripts/controllers/BandaCtrl.js"></script>
-    <script src="scripts/controllers/GeneroCtrl.js"></script>
-
-    <script src="scripts/services/AlbumsProvider.js"></script>
-    <script src="scripts/services/BandsProvider.js"></script>
-    <script src="scripts/services/GenresProvider.js"></script>
 </head>
-<body>
+
+<body ng-app="javi">
 <div class="container">
 
     <header><h1 class="text-center">Javiteca</h1></header>
@@ -32,14 +18,25 @@
         </ul>
     </nav>
 
-    <section app-view-segment="0"></section>
+    <section ng-view></section>
 
-    <footer>Javiteca hecho en Angular</footer>
+
 </div>
 
-<!--
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
--->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js"></script>
 
+<script src="scripts/app.js"></script>
+<script src="scripts/constants/Properties.js"></script>
+
+<script src="scripts/controllers/IndexCtrl.js"></script>
+<script src="scripts/controllers/AlbumCtrl.js"></script>
+<script src="scripts/controllers/BandaCtrl.js"></script>
+<script src="scripts/controllers/GeneroCtrl.js"></script>
+
+<script src="scripts/providers/Javiteca.js"></script>
+
+<script src="scripts/providers/BandsProvider.js"></script>
+<script src="scripts/providers/GenresProvider.js"></script>
 </body>
 </html>
