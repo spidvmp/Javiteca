@@ -1,8 +1,8 @@
-angular.module("javi").service("BandsProvider",["$http",
-    function($http)
+angular.module("javi").service("BandsProvider",["$http","Properties",
+    function($http,Properties)
     {
         this.getBands = function()
             {
-                return $http.get("data/bands.json");
+                return $http.get(Properties.bandas);
             };
     }]);

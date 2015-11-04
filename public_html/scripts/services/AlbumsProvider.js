@@ -1,6 +1,7 @@
-angular.module("javi").service("AlbumsProvider",["$http",
-    function($http)
+angular.module("javi").service("AlbumsProvider",["$http", "Properties",
+    function($http, Properties)
     {
+
         this.getAlbums = function() {
             return  $http.get("data/albums.json");
         };
