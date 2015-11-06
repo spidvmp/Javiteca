@@ -1,14 +1,14 @@
-<tr>
+<tr ng-click="seleccionado()">
     <!-- el ng-if es pàra comtrolar que si no hay imagen pues que no salga el enlace roto -->
-    <td><img src="img/{{al.image}}" width="70px" ng-if="al.image" class="img-rounded"/></td>
-    <td>
+    <td ng-click="seleccionado()"><img src="img/{{al.image}}" width="70px" ng-if="al.image" class="img-rounded"/></td>
+    <td ng-click="seleccionado()">
         <div>
             <p>{{::al.title}} ({{::al.year}}) </p>
             <p><small><em>{{::al.genre.name}}</em></small></p>
         </div>
     </td>
-    <td>{{::al.band.name}}</td>
-    <td>{{::al.tracklist.length}}</td>
+    <td ng-click="seleccionado()">{{::al.band.name}}</td>
+    <td ng-click="seleccionado()">{{::al.tracklist.length}}</td>
 
 
 </tr>

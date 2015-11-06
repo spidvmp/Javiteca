@@ -1,6 +1,8 @@
 
 <table class="table table-stripped table-hover">
+    <thead>
     <tr><td>Banda</td><td>Albumes</td><td></td><td>Componentes</td></tr>
+    </thead>
     <tr ng-repeat="ba in Bandas|orderBy:'name'" banda-direct ba="ba">
     </tr>
 </table>
