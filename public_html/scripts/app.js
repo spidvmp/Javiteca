@@ -1,13 +1,12 @@
 
 angular.module("javi",["ngRoute"]);
 
-//definomos provider
 
 angular.module("javi").config(["JavitecaProvider", "Properties", function(JavitecaProvider, Properties){
     JavitecaProvider.setAlbum(Properties.albumes);
     JavitecaProvider.setGenero(Properties.generos);
     JavitecaProvider.setBanda(Properties.bandas);
-    debugger;
+
 }]);
 
 //definimos los enrutamientos
@@ -22,12 +21,13 @@ angular.module("javi").config(["$routeProvider", function( $routeProvider){
             }]
         }
     });
-    $routetProvider.when("/banda",{
+
+    $routeProvider.when("/banda",{
         controller: "BandaCtrl",
         templateUrl: "views/banda.html",
         resolve: {
             Bands: [ "Javiteca", function(Javiteca){
-                return Javiteca.getBands();
+                return Javiteca.getBandas();
             }]
         }
     });
@@ -36,14 +36,13 @@ angular.module("javi").config(["$routeProvider", function( $routeProvider){
         templateUrl: "views/genero.html",
         resolve: {
             Genres: [ "Javiteca", function(Javiteca){
-                return Javiteca.getGenres();
+                return Javiteca.getGeneros();
             }]
         }
     });
-    /*
-    //ruta por defecto
+
     $routeProvider.otherwise({
         redirectTo: "/album"
     });
-    */
+
 }]);

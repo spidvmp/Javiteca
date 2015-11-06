@@ -1,4 +1,4 @@
-angular.module("javi").provider("Javiteca",["$http", function($http ) {
+angular.module("javi").provider("Javiteca", function( ) {
 
     //vamos a guardar los valores de los json
     var albumes = "";
@@ -27,10 +27,10 @@ angular.module("javi").provider("Javiteca",["$http", function($http ) {
                     return $http.get(bandas);
                 },
 
-                getAlbumes: function () {
+                getGeneros: function () {
                     return $http.get(generos);
-                },
+                }
             };
         }]
     }
-}]);
+});
