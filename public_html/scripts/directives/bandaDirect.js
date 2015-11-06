@@ -1,3 +1,9 @@
 angular.module("javi").directive("bandaDirect", ["Javiteca", function(){
-    return{};
+    return{
+        restrict: "EA",
+        templateUrl: "views/bandaDirect.html",
+        scope: {
+            post: "="
+        }
+    };
 }]);

@@ -1,3 +1,9 @@
 angular.module("javi").directive("generoDirect", ["Javiteca", function(){
-    return{};
+    return{
+        restrict: "EA",
+        templateUrl: "views/ageneroDirect.html",
+        scope: {
+            post: "="
+        }
+    };
 }]);
