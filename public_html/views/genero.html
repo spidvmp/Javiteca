@@ -1,7 +1,7 @@
 
 <table class="table table-stripped table-hover">
     <tr><td>Genero</td><td>Titulos</td></tr>
-    <tr ng-repeat="ge in Generos" genero-direct ge="ge">
+    <tr ng-repeat="ge in Generos|orderBy:'name'" genero-direct ge="ge">
 
 
 
