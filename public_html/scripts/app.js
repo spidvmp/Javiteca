@@ -41,6 +41,18 @@ angular.module("javi").config(["$routeProvider", function( $routeProvider){
         }
     });
 
+    //defino las paginas de detalle
+    $routeProvider.when("/detalleAlbum/:idAlbum", {
+        controller: "DetalleAlbumCtrl",
+        templateUrl: "views/DetalleAlbum.html",
+        resolve: {
+            Album:["Javiteca", $route, function (Javiteca, $route) {
+                console.log("Buscando para detalleAlbum id ",$route.current.params.idAlbum);
+                return  {nombre:'hola'};
+            }]
+        }
+    });
+
     $routeProvider.otherwise({
         redirectTo: "/album"
     });
