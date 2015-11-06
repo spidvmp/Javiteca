@@ -1,10 +1,8 @@
 
-
 <table class="table table-stripped table-hover">
     <tr><td>Genero</td><td>Titulos</td></tr>
-    <tr ng-repeat="ge in Generos">
-        <td>{{ge.name}}</td>
-        <td>{{ge.albums.length}}</td>
+    <tr ng-repeat="ge in Generos" genero-direct ge="ge">
+
 
 
     </tr>
