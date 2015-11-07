@@ -1,1 +1,24 @@
-{{ banda.name}}
+<div>
+    <p>Nombre: {{banda.name}}</p>
+    <p>origen: {{banda.origin}}</p>
+    <table>
+        <thead>
+        <tr><td>Nombre</td><td>Instrumentos</td></tr>
+        </thead>
+        <tr ng-repeat="mem in banda.members">
+            <td>{{mem.name}}</td>
+            <td>{{mem.instruments}}</td>
+        </tr>
+
+    </table>
+
+    <table>
+    <tr ng-repeat="al in banda.albums">
+        <td><img src="img/{{al.image}}" width="50px" ng-if="al.image" class="img-circle"/></td>
+        <td>{{al.title}}</td>
+        <td>{{al.genre.name}}</td>
+    </tr>
+    </table>
+
+</div>
+
