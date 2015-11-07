@@ -1,4 +1,4 @@
-angular.module("javi").directive("albumDirect", ["Javiteca", function(){
+angular.module("javi").directive("albumDirect", [ function(){
     return{
         restrict: "EA",
         templateUrl: "views/albumDirect.html",
@@ -13,7 +13,7 @@ angular.module("javi").directive("albumDirect", ["Javiteca", function(){
                 //envio la notificacion y el id para localizarlo
                 scope.onAlbumClick({idAlbum: scope.al.id});
                 console.log("Envio id=",scope.al.id);
-            }
+            };
         }
     };
 }]);

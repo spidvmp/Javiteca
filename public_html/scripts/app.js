@@ -46,7 +46,7 @@ angular.module("javi").config(["$routeProvider", function( $routeProvider){
         controller: "DetalleAlbumCtrl",
         templateUrl: "views/DetalleAlbum.html",
         resolve: {
-            Album:["Javiteca", $route, function (Javiteca, $route) {
+            Album:["Javiteca", "$route", function (Javiteca, $route) {
                 console.log("Buscando para detalleAlbum id ",$route.current.params.idAlbum);
                 return  {nombre:'hola'};
             }]
