@@ -48,7 +48,7 @@ angular.module("javi").config(["$routeProvider", function( $routeProvider){
         resolve: {
             Album:["Javiteca", "$route", function (Javiteca, $route) {
                 console.log("Buscando para detalleAlbum id ",$route.current.params.idAlbum);
-                return  {nombre:'album'};
+                return Javiteca.getAlbum($route.current.params.idAlbum);
             }]
         }
     });
@@ -57,8 +57,8 @@ angular.module("javi").config(["$routeProvider", function( $routeProvider){
         controller: "DetalleGeneroCtrl",
         templateUrl: "views/DetalleGenero.html",
         resolve: {
-            Album:["Javiteca", "$route", function (Javiteca, $route) {
-                return  {nombre:'genero'};
+            Genero:["Javiteca", "$route", function (Javiteca, $route) {
+                return Javiteca.getGenero($route.current.params.idGenero);
             }]
         }
     });
@@ -67,8 +67,8 @@ angular.module("javi").config(["$routeProvider", function( $routeProvider){
         controller: "DetalleBandaCtrl",
         templateUrl: "views/DetalleBanda.html",
         resolve: {
-            Album:["Javiteca", "$route", function (Javiteca, $route) {
-                return  {nombre:'banda'};
+            Banda:["Javiteca", "$route", function (Javiteca, $route) {
+                return Javiteca.getBanda($route.current.params.idBanda);
             }]
         }
     });

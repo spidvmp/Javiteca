@@ -15,21 +15,60 @@ angular.module("javi").provider("Javiteca", function( ) {
 
 
         //y ahora la parte de run, simepre es un $get
-        $get: ["$http", function ($http) {
+        $get: ["$http", "$filter", function ($http, $filter) {
             return {
 
                 //obtenemos los albumes
                 getAlbumes: function () {
                     return $http.get(albumes);
                 },
-
+                
+                //obtenemos las bandas
                 getBandas: function () {
                     return $http.get(bandas);
                 },
 
+                //obtenemos los generos
                 getGeneros: function () {
                     return $http.get(generos);
+                },
+                
+                //obtenemos solo un album, el del id
+                getAlbum: function(idAlbum){
+                     return $http.get(albumes).then(
+                        function(res){
+                            return $filter('filter')(res.data,{id: idAlbum});
+                        },
+                        function(error){
+                            alert("Error al recuperar el albmub ",idAlbum);
+                        }
+                    );
+                },
+
+                //obtenemos solo un banda, el del id
+                getBanda: function(idBanda){
+                    return $http.get(bandas).then(
+                        function(res){
+                            return $filter('filter')(res.data,{id: idBanda});
+                        },
+                        function(error){
+                            alert("Error al recuperar el albmub ",idBanda);
+                        }
+                    );
+                },
+
+                //obtenemos solo un genero, el del id
+                getGenero: function(idGenero){
+                    return $http.get(generos).then(
+                        function(res){
+                            return $filter('filter')(res.data,{id: idGenero});
+                        },
+                        function(error){
+                            alert("Error al recuperar el albmub ",idGenero);
+                        }
+                    );
                 }
+                
             };
         }]
     }

@@ -1,4 +1,4 @@
-angular.module("javi").controller("DetalleGeneroCtrl",["$scope","Album",function($scope,Album) {
+angular.module("javi").controller("DetalleGeneroCtrl",["$scope","Genero",function($scope,Genero) {
 
-    $scope.Album = Album.data;
+    $scope.genero = Genero[0];
 }]);
