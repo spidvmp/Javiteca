@@ -3,14 +3,14 @@ angular.module("javi").directive("generoDirect", ["Javiteca", function(){
         restrict: "EA",
         templateUrl: "views/generoDirect.html",
         scope: {
-            ge: "="
+            ge: "=",
+            onGeneroClick: "&"
         },
         link: function (scope) {
 
             //pulsan en el tr del album
             scope.seleccionado = function(){
-                console.log("seleccionado");
-                alert("seleccionan " + scope.ge.name);
+                scope.onGeneroClick({idGenero: scope.ge.id});
             }
         }
     };

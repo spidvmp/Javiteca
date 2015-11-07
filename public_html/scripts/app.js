@@ -48,7 +48,27 @@ angular.module("javi").config(["$routeProvider", function( $routeProvider){
         resolve: {
             Album:["Javiteca", "$route", function (Javiteca, $route) {
                 console.log("Buscando para detalleAlbum id ",$route.current.params.idAlbum);
-                return  {nombre:'hola'};
+                return  {nombre:'album'};
+            }]
+        }
+    });
+
+    $routeProvider.when("/detalleGenero/:idGenero", {
+        controller: "DetalleGeneroCtrl",
+        templateUrl: "views/DetalleGenero.html",
+        resolve: {
+            Album:["Javiteca", "$route", function (Javiteca, $route) {
+                return  {nombre:'genero'};
+            }]
+        }
+    });
+
+    $routeProvider.when("/detalleBanda/:idBanda", {
+        controller: "DetalleBandaCtrl",
+        templateUrl: "views/DetalleBanda.html",
+        resolve: {
+            Album:["Javiteca", "$route", function (Javiteca, $route) {
+                return  {nombre:'banda'};
             }]
         }
     });

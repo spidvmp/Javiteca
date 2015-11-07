@@ -12,7 +12,6 @@ angular.module("javi").directive("albumDirect", [ function(){
             scope.seleccionado = function(){
                 //envio la notificacion y el id para localizarlo
                 scope.onAlbumClick({idAlbum: scope.al.id});
-                console.log("Envio id=",scope.al.id);
             };
         }
     };
