@@ -1,7 +1,7 @@
 <div>
     <p>Nombre: {{banda.name}}</p>
     <p>origen: {{banda.origin}}</p>
-    <a target="_blank" href="{{wiki}}">Wipedia</a>
+    <a target="_blank" href="{{::banda.name|wikipediaLink}}">Wipedia</a>
     <table>
         <thead>
         <tr><td>Nombre</td><td>Instrumentos</td></tr>

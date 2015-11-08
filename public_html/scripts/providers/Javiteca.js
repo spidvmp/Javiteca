@@ -67,20 +67,8 @@ angular.module("javi").provider("Javiteca", function( ) {
                             alert("Error al recuperar el albmub ",idGenero);
                         }
                     );
-                },
-
-                getWikipediaLink: function getWikipediaLink(banda){
-                    var
-                        query = encodeURIComponent(banda);
-                    return "https://es.wikipedia.org/wiki/Special:Search?search=" + query;
-                },
-
-                /*
-                getYouTubeLink: function getYouTubeLink(bandName,trackName) {
-                    var query = encodeURIComponent((bandName + " " + trackName).toLowerCase());
-                    return "https://www.youtube.com/results?search_query=" + query;
                 }
-                */
+
             };
         }]
     }

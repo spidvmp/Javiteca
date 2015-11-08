@@ -1,4 +1,4 @@
-angular.module("javi").filter("getYouTubeLink", function($filter) {
+angular.module("javi").filter("getYouTubeLink", function() {
     //los filtro siempre devuelven funciones y un mdato de entrada como minimo
     return function(banda, track){
         var query = encodeURIComponent((banda + " " + track).toLowerCase());
