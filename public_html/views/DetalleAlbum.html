@@ -17,6 +17,7 @@
         </thead>
         <tr ng-repeat="track in album.tracklist">
             <td>{{track}}</td>
+            <td><a target="_blank" href="{{::album.band.name|getYouTubeLink:track}}">wiki</a></td>
 
         </tr>
     </table>
