@@ -14,10 +14,13 @@
     </table>
 
     <table>
-    <tr ng-repeat="al in banda.albums">
-        <td><img src="img/{{al.image}}" width="50px" ng-if="al.image" class="img-circle"/></td>
+    <tr ng-repeat="al in banda.albums" albumes-detalle-direct al="al" on-album-click="detalleAlbum(idAlbum)">
+    <!--<tr ng-repeat="al in banda.albums" banda-direct ba="banda" on-banda-click="detalleBanda(idBanda)") />-->
+        <!--
+        <td ng-click="seleccionado()"><img src="img/{{al.image}}" width="50px" ng-if="al.image" class="img-circle"/></td>
         <td>{{al.title}}</td>
         <td>{{al.genre.name}}</td>
+        -->
     </tr>
     </table>
 

@@ -2,11 +2,12 @@
     <h3>{{ genero.name}}</h3>
 
     <table>
-        <tr ng-repeat="al in genero.albums">
+        <tr ng-repeat="al in genero.albums" albumes-detalle-direct al="al" on-album-click="detalleAlbum(idAlbum)">
+            <!--
             <td><img src="img/{{al.image}}" width="50px" ng-if="al.image" class="img-circle"/></td>
             <td>{{al.title}} ({{al.year}})</td>
             <td>{{al.band.name}}</td>
-
+-->
         </tr>
     </table>
 </div>
