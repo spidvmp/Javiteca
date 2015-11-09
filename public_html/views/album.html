@@ -1,9 +1,8 @@
 
-
 <table class="table table-stripped table-hover">
     <thead>
     <tr><td>Portada</td><td>Titulo</td><td>Banda</td><td>Tracks</td></tr>
     </thead>
-    <tr ng-repeat="al in Albumes|orderBy:'title'" album-direct al="al" on-album-click="detalleAlbum(idAlbum)")/>
+    <tr ng-repeat="al in Albumes|orderBy:'title'" album-direct al="al"  on-album-click="detalleAlbum(idAlbum)")/>
     </tr>
 </table>

@@ -7,8 +7,11 @@
             <p><small><em>{{::al.genre.name}}</em></small></p>
         </div>
     </td>
+    <td><button ng-click="esFavorito(al.band.name)">Boton</button> </td>
+
     <td ng-click="seleccionado()">{{::al.band.name}}</td>
     <td ng-click="seleccionado()">{{::al.tracklist.length}}</td>
+
 
 
 </tr>

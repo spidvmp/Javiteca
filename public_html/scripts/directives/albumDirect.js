@@ -1,4 +1,4 @@
-angular.module("javi").directive("albumDirect", [ function(){
+angular.module("javi").directive("albumDirect", ["albumStorage", function(albumStorage){
     return{
         restrict: "EA",
         templateUrl: "views/albumDirect.html",
@@ -13,6 +13,22 @@ angular.module("javi").directive("albumDirect", [ function(){
                 //envio la notificacion y el id para localizarlo
                 scope.onAlbumClick({idAlbum: scope.al.id});
             };
+
+            scope.esFavorito=function(idAlbum){
+                console.log("esFavorito" + idAlbum);
+
+               console.log(albumStorage.hola(idAlbum));
+                /*
+                albumStorage.hola(idAlbum).then(
+                    function(response){
+                        console.debug(response);
+                        return response;
+                    }
+                );
+                */
+
+            }
+
         }
     };
 }]);
