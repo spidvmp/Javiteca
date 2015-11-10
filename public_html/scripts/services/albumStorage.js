@@ -4,8 +4,7 @@ angular.module("javi").service("albumStorage",["Properties","Javiteca",function(
     //compruebo si puedo usar el localstorage
     if (typeof(Storage) !== "undefined") {
         //lo primeo es cargar lo que haya, en caso de que no haya, pues hay que cargarlo del json
-
-        al = JSON.parse(localStorage.getItem("Albumes"));
+        al=load();
         if (!al) {
             //es la primera vez, no tengo datos almacenados, genero el JSON con los id y false
             //me recorro el array para generar el nuevo json
@@ -19,23 +18,21 @@ angular.module("javi").service("albumStorage",["Properties","Javiteca",function(
                     }
                     save();
                 }
-
             );
-
-
         } else
-            albumes = al;
+            albumesFavoritos=al;
     } else {
-        console.log("no sopoerta storage");
+        console.log("no soporta storage");
         albumesFavoritos=null;
     }
 
     function save (){
-        console.log("GRABO ", albumesFavoritos.length, " albumes");
+        localStorage.setItem(Properties.localStrAlbum, JSON.stringify(albumesFavoritos));
     }
 
-    function favorito(id){
-        return albumesFavoritos.filter(function(albumesFavoritos){return albumesFavoritos.id === id});
+    function load(){
+        var a = localStorage.getItem(Properties.localStrAlbum);
+        return JSON.parse(a);
     }
 
     return {
@@ -48,6 +45,7 @@ angular.module("javi").service("albumStorage",["Properties","Javiteca",function(
             } else {
                 albumesFavoritos[id] = 'true';
             }
+            save();
             return this.esFavorito(id);
         },
 
@@ -60,69 +58,4 @@ angular.module("javi").service("albumStorage",["Properties","Javiteca",function(
 
         }
     };
-/*
-
-    console.log("service AlbumStorage");
-    var zz="asdasd";
-    console.log("zz=", zz);
-    var albumesFavoritos=[];
-    debugger;
- if (typeof(Storage) !== "undefined") {
-        //lo primeo es cargar lo que haya, en caso de que no haya, pues hay que cargarlo del json
-        var albumes = [];
-
-        al = JSON.parse(localStorage.getItem("Albumes"));
-        if (!al) {
-            //es la primera vez, no tengo datos almacenados, genero el JSON con los id y false
-            //me recorro el array para generar el nuevo json
-            Javiteca.getAlbumes().then (
-                function (data){
-                    for (var i = 0; i < data.length; i++) {
-                        var b = listadoAlbumes[i].id;
-                        albumes.push({id: b, favorito: 'false'});
-                    }
-                }
-
-            );
-
-
-        } else
-            albumes = al;
-    } else {
-        console.log("no sopoerta storage");
-        albumesFavoritos=null;
-    }
-
-
-    this.albumesFavoritos = function(listadoAlbumes) {
-        //compruebo si puede tener localstorage
-        if (typeof(Storage) !== "undefined") {
-            //lo primeo es cargar lo que haya, en caso de que no haya, pues hay que cargarlo del json
-            var albumes=[];
-
-            al = JSON.parse(localStorage.getItem("Albumes"));
-            if (!al) {
-                //es la primera vez, no tengo datos almacenados, genero el JSON con los id y false
-                //me recorro el array para generar el nuevo json
-
-                for (var i = 0; i < listadoAlbumes.length; i++) {
-                    var b = listadoAlbumes[i].id;
-                    albumes.push({id: b, favorito: 'false'});
-                }
-            } else
-                albumes=al;
-            return albumes;
-        }
-        else {//si no contempla el sortage devuelve falso
-            return false;
-        }
-
-    };
-
-    this.hola= function(){
-        console.log("hola");
-        return 1;
-    };
-*/
-
 }]);
