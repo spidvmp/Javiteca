@@ -1,4 +1,7 @@
 <tr>
+    <td ng-click="cambiaFavorito(ge.id)">
+        <span class={{esFavorito(ge.id)}} aria-hidden="true"></span>
+    </td>
     <td ng-click="seleccionado()">{{::ge.name}}</td>
     <td ng-click="seleccionado()">{{::ge.albums.length}}</td>
 </tr>

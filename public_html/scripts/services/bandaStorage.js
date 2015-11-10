@@ -1,6 +1,6 @@
-angular.module("javi").service("albumStorage",["Properties","Javiteca",function(Properties, Javiteca){
+angular.module("javi").service("bandaStorage",["Properties","Javiteca",function(Properties, Javiteca){
 
-    var albumesFavoritos={};
+    var bandasFavoritas={};
     //compruebo si puedo usar el localstorage
     if (typeof(Storage) !== "undefined") {
         //lo primeo es cargar lo que haya, en caso de que no haya, pues hay que cargarlo del json
@@ -8,30 +8,30 @@ angular.module("javi").service("albumStorage",["Properties","Javiteca",function(
         if (!al) {
             //es la primera vez, no tengo datos almacenados, genero el JSON con los id y false
             //me recorro el array para generar el nuevo json
-            Javiteca.getAlbumes().then (
+            Javiteca.getBandas().then (
                 function (data){
 
                     for (var i = 0; i < data.data.length; i++) {
                         var b = data.data[i].id;
                         //el dato se guarda en este formarto { id : true/false } asi accedo muy rapido y puedo cambiar los datos facilmente
-                        albumesFavoritos[b]='false';
+                        bandasFavoritas[b]='false';
                     }
                     save();
                 }
             );
         } else
-            albumesFavoritos=al;
+            bandasFavoritas=al;
     } else {
         console.log("no soporta storage");
-        albumesFavoritos=null;
+        bandasFavoritas=null;
     }
 
     function save (){
-        localStorage.setItem(Properties.localStrAlbum, JSON.stringify(albumesFavoritos));
+        localStorage.setItem(Properties.localStrBanda, JSON.stringify(bandasFavoritas));
     }
 
     function load(){
-        var a = localStorage.getItem(Properties.localStrAlbum);
+        var a = localStorage.getItem(Properties.localStrBanda);
         return JSON.parse(a);
     }
 
@@ -39,10 +39,10 @@ angular.module("javi").service("albumStorage",["Properties","Javiteca",function(
 
         cambiaFavorito: function(id) {
             //cambia el estado del favorito y despues devuelve el icono que tiene que mostrar
-            if ( albumesFavoritos[id] === 'true' ){
-                albumesFavoritos[id] = 'false';
+            if ( bandasFavoritas[id] === 'true' ){
+                bandasFavoritas[id] = 'false';
             } else {
-                albumesFavoritos[id] = 'true';
+                bandasFavoritas[id] = 'true';
             }
             save();
             return this.esFavorito(id);
@@ -50,7 +50,7 @@ angular.module("javi").service("albumStorage",["Properties","Javiteca",function(
 
         esFavorito: function(id) {
             //compruba si es favorito o no, devuelve un icono y otro y es el que se muestra
-           if ( albumesFavoritos[id] === 'false')
+           if ( bandasFavoritas[id] === 'false')
                 return Properties.noEsFavoritoIcon;
             else
                 return Properties.esFavoritoIcon;

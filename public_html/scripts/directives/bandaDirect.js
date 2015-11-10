@@ -1,4 +1,4 @@
-angular.module("javi").directive("bandaDirect", ["Javiteca", function(){
+angular.module("javi").directive("bandaDirect", ["bandaStorage", function(bandaStorage){
     return{
         restrict: "EA",
         templateUrl: "views/bandaDirect.html",
@@ -11,6 +11,14 @@ angular.module("javi").directive("bandaDirect", ["Javiteca", function(){
             //pulsan en el tr del album
             scope.seleccionado = function(){
                 scope.onBandaClick({idBanda: scope.ba.id});
+            };
+
+            scope.esFavorito=function(idBanda){
+                    return bandaStorage.esFavorito(idBanda);
+                };
+
+            scope.cambiaFavorito=function(idBanda){
+                return bandaStorage.cambiaFavorito(idBanda);
             }
         }
     };

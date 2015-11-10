@@ -4,7 +4,7 @@ angular.module("javi").directive("albumDirect", ["albumStorage", function(albumS
         templateUrl: "views/albumDirect.html",
         scope: {
             al: "=",
-            imagen: "=",
+            //imagen: "=",
             onAlbumClick: "&" //establecemos la notificacion hacia el album.html
         },
         link: function (scope) {

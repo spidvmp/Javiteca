@@ -4,6 +4,8 @@ angular.module("javi").constant("Properties",{
     bandas:"data/bands.json",
     generos:"data/genres.json",
     localStrAlbum:"albumStr",
+    localStrBanda:"bandaStr",
+    localStrGenero:"generoStr",
     esFavoritoIcon:"glyphicon glyphicon-heart",
     noEsFavoritoIcon:"glyphicon glyphicon-heart-empty"
 });
