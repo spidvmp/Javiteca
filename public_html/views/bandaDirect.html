@@ -1,13 +1,13 @@
 <tr>
-    <td ng-click="cambiaFavorito(ba.id)">
+    <td ng-click="cambiaFavorito(ba.id)" id="favorito">
         <span class={{esFavorito(ba.id)}} aria-hidden="true"></span>
     </td>
 <td ng-click="seleccionado()">
-    <div>
-        <p>{{::ba.name}}</p>
+
+        <p id="tituloBanda">{{::ba.name}}</p>
         <p><small><em>{{::ba.origin}}</em></small></p>
-    </div>
+
 </td>
-<td ng-click="seleccionado()">{{::ba.albums.length}}</td>
-<td ng-click="seleccionado()">{{::ba.members.length}}</td>
+<td ng-click="seleccionado()" id="celda">{{::ba.albums.length}}</td>
+<td ng-click="seleccionado()" id="celda">{{::ba.members.length}}</td>
 </tr>

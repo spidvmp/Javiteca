@@ -1,7 +1,7 @@
 <tr>
-    <td ng-click="cambiaFavorito(ge.id)">
+    <td ng-click="cambiaFavorito(ge.id)" id="favorito">
         <span class={{esFavorito(ge.id)}} aria-hidden="true"></span>
     </td>
-    <td ng-click="seleccionado()">{{::ge.name}}</td>
-    <td ng-click="seleccionado()">{{::ge.albums.length}}</td>
+    <td ng-click="seleccionado()" id="tituloGenero">{{::ge.name}}</td>
+    <td ng-click="seleccionado()" id="celda">{{::ge.albums.length}}</td>
 </tr>

@@ -1,0 +1,37 @@
+body{
+    font-family: Palatino-Roman;
+}
+
+td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#tituloAlbum {
+    font-size:17px;
+    margin-top:15px;
+    margin-bottom: 7px;
+}
+#tituloBanda {
+    font-size: 17px;
+}
+#tituloGenero {
+    font-size: 17px;
+    vertical-align: middle;
+}
+#celda {
+    text-align: center;
+    vertical-align: middle;
+}
+#favorito {
+    font-size: 25px;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+/*
+#centrado {
+    text-align: center;
+}
+*/
