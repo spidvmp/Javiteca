@@ -4,6 +4,7 @@ angular.module("javi").directive("albumDirect", ["albumStorage", function(albumS
         templateUrl: "views/albumDirect.html",
         scope: {
             al: "=",
+            imagen: "=",
             onAlbumClick: "&" //establecemos la notificacion hacia el album.html
         },
         link: function (scope) {
@@ -15,18 +16,11 @@ angular.module("javi").directive("albumDirect", ["albumStorage", function(albumS
             };
 
             scope.esFavorito=function(idAlbum){
-                console.log("esFavorito" + idAlbum);
+                return albumStorage.esFavorito(idAlbum);
+            };
 
-               console.log(albumStorage.hola(idAlbum));
-                /*
-                albumStorage.hola(idAlbum).then(
-                    function(response){
-                        console.debug(response);
-                        return response;
-                    }
-                );
-                */
-
+            scope.cambiaFavorito=function(idAlbum){
+                return albumStorage.cambiaFavorito(idAlbum);
             }
 
         }

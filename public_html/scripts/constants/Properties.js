@@ -2,5 +2,7 @@
 angular.module("javi").constant("Properties",{
     albumes:"data/albums.json",
     bandas:"data/bands.json",
-    generos:"data/genres.json"
+    generos:"data/genres.json",
+    esFavoritoIcon:"glyphicon glyphicon-heart",
+    noEsFavoritoIcon:"glyphicon glyphicon-heart-empty"
 });
