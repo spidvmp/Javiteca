@@ -1,7 +1,7 @@
-<div>
+<div align="center">
     <h3>{{ genero.name}}</h3>
 
-    <table>
+    <table id="DG_tabla">
         <tr ng-repeat="al in genero.albums" albumes-detalle-direct al="al" on-album-click="detalleAlbum(idAlbum)">
             <!--
             <td><img src="img/{{al.image}}" width="50px" ng-if="al.image" class="img-circle"/></td>

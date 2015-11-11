@@ -1,0 +1,27 @@
+#DG_cabecera{
+    width: 50%;
+    margin-top:60px;
+    text-align: left;
+
+}
+#DG_tabla {
+    width:50%;
+    margin-top:30px;
+}
+
+#DG_componentes_td {
+    text-align: right;
+    height: 35px;
+    padding-right: 15px;
+}
+
+#DG_instrumentos_td{
+    text-align: left;;
+    padding-left: 15px;
+}
+
+#BG_albumes_td {
+    text-align: right;
+    height: 60px;
+    padding-right: 15px;
+}

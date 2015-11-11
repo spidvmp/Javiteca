@@ -1,26 +1,27 @@
-<div>
-    <p>Nombre: {{banda.name}}</p>
-    <p>origen: {{banda.origin}}</p>
-    <a target="_blank" href="{{::banda.name|wikipediaLink}}">Wipedia</a>
-    <table>
+<div align="center">
+    <div id="DB_cabecera">
+        <p>Nombre: {{banda.name}}</p>
+        <p>Origen: {{banda.origin}}</p>
+        <a target="_blank" href="{{::banda.name|wikipediaLink}}">Wipedia</a>
+    </div>
+    <table id="DB_tabla">
         <thead>
-        <tr><td>Nombre</td><td>Instrumentos</td></tr>
+        <tr><td colspan="2">Componentes</td></tr>
+        <tr><td id="DB_componentes_td">Nombre</td><td id="DB_instrumentos_td">Instrumentos</td></tr>
         </thead>
         <tr ng-repeat="mem in banda.members">
-            <td>{{mem.name}}</td>
-            <td>{{mem.instruments}}</td>
+            <td id="DB_componentes_td">{{mem.name}}</td>
+            <td id="DB_instrumentos_td">{{mem.instruments}}</td>
         </tr>
 
     </table>
 
-    <table>
+    <table id="DB_tabla">
+        <thead>
+        <tr><td colspan="3">Albumes editados</td></tr>
+        </thead>
     <tr ng-repeat="al in banda.albums" albumes-detalle-direct al="al" on-album-click="detalleAlbum(idAlbum)">
-    <!--<tr ng-repeat="al in banda.albums" banda-direct ba="banda" on-banda-click="detalleBanda(idBanda)") />-->
-        <!--
-        <td ng-click="seleccionado()"><img src="img/{{al.image}}" width="50px" ng-if="al.image" class="img-circle"/></td>
-        <td>{{al.title}}</td>
-        <td>{{al.genre.name}}</td>
-        -->
+
     </tr>
     </table>
 

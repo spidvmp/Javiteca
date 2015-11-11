@@ -1,7 +1,7 @@
 <tr>
-    <td ng-click="seleccionado()"><img src="img/{{al.image}}" width="50px" ng-if="al.image" class="img-circle"/></td>
-    <td ng-click="seleccionado()">{{al.title}}</td>
-    <td ng-click="seleccionado()" ng-show="al.genre.name">{{al.genre.name}}</td>
-    <td ng-click="seleccionado()" ng-show="al.band.name">{{al.band.name}}</td>
+    <td ng-click="seleccionado()" id="DB_albumes_td"><img src="img/{{al.image}}" width="50px" ng-if="al.image" class="img-circle"/></td>
+    <td ng-click="seleccionado()" id="DB_albumes_td">{{al.title}}</td>
+    <td ng-click="seleccionado()" ng-show="al.genre.name" id="BD_albumes_td" >{{al.genre.name}}</td>
+    <td ng-click="seleccionado()" ng-show="al.band.name" id="BD_albumes_td">{{al.band.name}}</td>
 
 </tr>
