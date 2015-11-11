@@ -1,23 +1,23 @@
 <div align="center">
 
-    <div>
-        <img src="img/{{album.image}}" width="120px" ng-if="album.image" class="img-rounded"/>
-        <div >
-            <p>Banda: {{::album.band.name}}</p>
-            <p>Titulo: {{::album.title}} ({{::album.year}}) </p>
-            <p><small><em>Genero: {{::album.genre.name}}</em></small></p>
-
+    <div id="DA_datos">
+        <!-- el ng-if es pàra comtrolar que si no hay imagen pues que no salga el enlace roto -->
+        <img src="img/{{album.image}}" width="120px" ng-if="album.image" class="img-rounded" id="DA_imagen"/>
+        <div id="DA_datostxt">
+            <p id="DA_textos">Banda: {{::album.band.name}}</p>
+            <p id="DA_textos">Titulo: {{::album.title}} ({{::album.year}}) </p>
+            <p id="DA_textos"><small><em>Genero: {{::album.genre.name}}</em></small></p>
         </div>
 
     </div>
-    <!-- el ng-if es pàra comtrolar que si no hay imagen pues que no salga el enlace roto -->
 
-    <table>
+
+    <table class="table-bordered" id="DA_tabla">
         <thead>
-        <tr><td>Tracklist</td></tr>
+        <tr><td colspan="2">Tracklist</td></tr>
         </thead>
         <tr ng-repeat="track in album.tracklist">
-            <td>{{track}}</td>
+            <td id="DA_tracklist_td">{{track }}</td>
             <td><a target="_blank" href="{{::album.band.name|getYouTubeLink:track}}"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span></a></td>
 
         </tr>

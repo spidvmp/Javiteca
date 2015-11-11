@@ -1,0 +1,35 @@
+#DA_datos {
+    margin-top: 60px;
+    max-width: 50%;
+    margin-bottom: 30px;
+}
+
+#DA_imagen {
+    display: inline;
+
+}
+#DA_datostxt {
+    float:right;
+    margin-top: 20px;
+    /*height: 120px;*/
+}
+
+#DA_textos {
+    text-align: left;
+}
+
+#DA_tabla {
+    width: 50%; 
+}
+#DA_tracklist_td{
+    text-align: right;
+    height: 35px;
+    width: 80%;
+    padding-right: 15px;
+}
+
+#DA_link_td {
+    text-align: center;
+    width: 20%
+}
+
