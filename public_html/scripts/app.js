@@ -6,9 +6,6 @@ angular.module("javi").config(["JavitecaProvider", "Properties", function(Javite
     JavitecaProvider.setAlbum(Properties.albumes);
     JavitecaProvider.setGenero(Properties.generos);
     JavitecaProvider.setBanda(Properties.bandas);
-
-
-
 }]);
 
 //definimos los enrutamientos
