@@ -7,6 +7,7 @@
             <p id="DA_textos">Banda: {{::album.band.name}}</p>
             <p id="DA_textos">Titulo: {{::album.title}} ({{::album.year}}) </p>
             <p id="DA_textos"><small><em>Genero: {{::album.genre.name}}</em></small></p>
+            <p id="DA_textos"><span  class={{esFavorito(album.id)}} aria-hidden="true"></span></p>
         </div>
 
     </div>

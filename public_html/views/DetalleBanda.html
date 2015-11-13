@@ -2,6 +2,7 @@
     <div id="DB_cabecera">
         <p>Nombre: {{banda.name}}</p>
         <p>Origen: {{banda.origin}}</p>
+        <p><span class={{esFavorito(album.id)}} aria-hidden="true"></span></p>
         <a target="_blank" href="{{::banda.name|wikipediaLink}}">Wipedia</a>
     </div>
     <table id="DB_tabla">
