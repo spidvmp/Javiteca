@@ -1,8 +1,10 @@
-
+<div  id="inputClass">
+    <input type="search" ng-model="search" placeholder="buscar banda"/>
+</div>
 <table class="table table-stripped table-hover">
     <thead>
     <tr><td>Favorito</td><td>Banda</td><td>Albumes</td><td>Componentes</td></tr>
     </thead>
-    <tr ng-repeat="ba in Bandas|orderBy:'name'" banda-direct ba="ba" on-banda-click="detalleBanda(idBanda)") />
+    <tr ng-repeat="ba in Bandas|orderBy:'name'|filter:search" banda-direct ba="ba" on-banda-click="detalleBanda(idBanda)") />
     </tr>
 </table>
